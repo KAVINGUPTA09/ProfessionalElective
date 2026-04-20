@@ -1,0 +1,9 @@
+studentplus-ai/node_modules/
+studentplus-ai/.env
+studentplus-ai/dist/
+__pycache__/
+*.pyc
+.env
+node_modules/
+dist/
+build/

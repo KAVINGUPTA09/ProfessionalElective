@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sp-bg: #0D0F17;
+  --sp-surface: #13151F;
+  --sp-card: #1A1D2B;
+  --sp-border: #2A2D3E;
+  --sp-accent: #6C63FF;
+  --sp-teal: #00D4AA;
+  --sp-red: #FF6B6B;
+  --sp-amber: #FFB347;
+  --sp-text: #E8EAF0;
+  --sp-muted: #6B7080;
+  --sp-sub: #9BA3B8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--sp-bg);
+  color: var(--sp-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--sp-surface); }
+::-webkit-scrollbar-thumb { background: var(--sp-border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sp-accent); }
+
+/* Custom utilities */
+@layer components {
+  .card {
+    @apply bg-sp-card border border-sp-border rounded-2xl p-4;
+  }
+  .card-sm {
+    @apply bg-sp-card border border-sp-border rounded-xl p-4;
+  }
+  .badge {
+    @apply text-[10px] font-semibold px-2 py-0.5 rounded-full;
+  }
+  .badge-accent { @apply badge bg-sp-accent/20 text-sp-accent border border-sp-accent/30; }
+  .badge-teal   { @apply badge bg-sp-teal/20 text-sp-teal border border-sp-teal/30; }
+  .badge-red    { @apply badge bg-sp-red/20 text-sp-red border border-sp-red/30; }
+  .badge-amber  { @apply badge bg-sp-amber/20 text-sp-amber border border-sp-amber/30; }
+  .badge-muted  { @apply badge bg-sp-surface text-sp-muted border border-sp-border; }
+
+  .btn-primary {
+    @apply bg-sp-accent hover:bg-sp-accent/80 text-white text-sm font-medium px-4 py-2 rounded-xl transition-all duration-200 active:scale-95;
+  }
+  .btn-ghost {
+    @apply bg-transparent hover:bg-sp-surface text-sp-sub hover:text-sp-text text-sm px-4 py-2 rounded-xl border border-sp-border transition-all duration-200;
+  }
+  .input-field {
+    @apply bg-sp-surface border border-sp-border rounded-xl px-3 py-2 text-sm text-sp-text placeholder:text-sp-muted focus:outline-none focus:border-sp-accent transition-colors w-full;
+  }
+  .section-label {
+    @apply text-[10px] font-semibold tracking-widest uppercase text-sp-muted;
+  }
+  .metric-big {
+    @apply text-2xl font-semibold font-mono leading-none;
+  }
+  .page-title {
+    @apply text-lg font-semibold text-sp-text;
+  }
+  .page-sub {
+    @apply text-xs text-sp-muted mt-0.5;
+  }
+}
+
+/* Progress bar animation */
+.prog-fill {
+  animation: progGrow 1s ease forwards;
+}
+@keyframes progGrow {
+  from { width: 0; }
+}
+
+/* Fade-in animation for pages */
+.page-enter {
+  animation: pageEnter 0.35s ease forwards;
+}
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glow effect for active elements */
+.glow-accent { box-shadow: 0 0 20px rgba(108, 99, 255, 0.15); }
+.glow-teal   { box-shadow: 0 0 20px rgba(0, 212, 170, 0.15); }
+
+/* Status dot pulse */
+.dot-live {
+  animation: dotPulse 2s infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
