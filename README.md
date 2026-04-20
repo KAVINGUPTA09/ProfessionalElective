@@ -1,3 +1,4 @@
+
 🎓 StudentPlus AI – Intelligent Student Analytics Platform
 
 An advanced AI-powered platform designed to help students improve academic performance, career direction, and placement readiness using machine learning models and intelligent dashboards.
@@ -226,3 +227,4 @@ to deliver real-world impact and industry-level experience.
 ---
 
 ⭐ If you like this project, give it a star!
+
