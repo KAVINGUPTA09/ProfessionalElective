@@ -199,14 +199,14 @@ AI Assistant| "/api/assistant/query"
 
 - Kavin Gupta
 - Happy Saini
-- Divanshi Tyagi
+- Divyanshi Gupts
 - Anchal Yadav
 
 ---
 
 🌟 Future Enhancements
 
-- GPT-powered AI Assistant 🤖
+- AI Assistant 🤖
 - Real-time PDF parsing improvements
 - Live job/internship APIs integration
 - Advanced analytics charts (Recharts / D3)
